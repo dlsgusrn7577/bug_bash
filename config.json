@@ -26,7 +26,7 @@
 		}		
 	],
 	"ci_config": {
-		"output_directories": ["templates", "desktop"],
+		"output_directories": [],
 		"build_setup_cmd": "echo setup",
 		"build_cmd": "echo hello",
 		"serve_setup_cmd": "echo setup",
