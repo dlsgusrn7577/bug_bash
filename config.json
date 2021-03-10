@@ -1,27 +1,35 @@
 {
-  "configVersion": "1",
-  "https": true,
-  "templateVersion": 8,
-  "locales": [
-    "en"
-  ],
-  "features": [],
-  "requireArtifactBuild": true,
-  "ci_config": {
-    "base_image_tag": "node-12.18",
-    "build_setup_cmd": "./ci/build_setup.sh",
-    "build_cmd": "./ci/build.sh",
-    "serve_setup_cmd": "./ci/serve_setup.sh",
-    "serve_cmd": "./ci/serve.sh",
-    "rebuild_cmd": "",
-    "output_directories": [ "desktop" ],
-    "dependencies": {
-      "install_deps_cmd": "./ci/install_deps.sh",
-      "required_files": [
-        "package.json",
-        "package-lock.json",
-        "ci/install_deps.sh"
-      ]
-    }
-  }
+	"configVersion": "1",
+	"https": true,
+	"liveSite": true,
+	"locales": [
+		"en"
+	],
+	"templateVersion": 8,
+	"requireArtifactBuild": false,
+	"features": [
+		{
+			"name": "Location Page",
+			"streamLabel": "account-2959448/locations",
+			"goTemplateEntityPageSet": {
+				"template": "location.source",
+				"urlTemplate": "location.url"
+			}
+		},
+		{
+			"name": "Product Page",
+			"streamLabel": "account-2959448/products",
+			"goTemplateEntityPageSet": {
+				"template": "product.source",
+				"urlTemplate": "product.url"
+			}
+		}		
+	],
+	"ci_config": {
+		"output_directories": ["templates", "desktop"],
+		"build_setup_cmd": "echo setup",
+		"build_cmd": "echo hello",
+		"serve_setup_cmd": "echo setup",
+		"serve_cmd": "echo serve"
+	}
 }
